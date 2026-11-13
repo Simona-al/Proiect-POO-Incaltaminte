@@ -1,4 +1,4 @@
-public class Incaltaminte {
+public class Incaltaminte extends abstracta {
     protected String marca;
     protected String material;
     protected String culoare;
@@ -14,4 +14,4 @@ public class Incaltaminte {
     }
     }
 
-}
+
