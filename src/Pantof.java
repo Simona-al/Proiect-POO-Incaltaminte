@@ -15,10 +15,10 @@ public class Pantof extends Incaltaminte{
 
     }
 
-    public Pantof(String marca, String material, String culoare, double pret, int marime,
+    public Pantof(int stoc, String material, String culoare, double pret, int marime,
                   String tipToc, String formaVarf,String destinatie, double inaltimeToc,
                   int numarAccesorii){
-        super(marca,material,culoare,pret,marime);
+        super(stoc,material,culoare,pret,marime);
         this.tipToc=tipToc;
         this.formaVarf=formaVarf;
         this.destinatie=destinatie;

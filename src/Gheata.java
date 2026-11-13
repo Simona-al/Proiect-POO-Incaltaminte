@@ -14,10 +14,10 @@ public class Gheata extends Incaltaminte{
         this.impermeabila=false;
     }
 
-    public Gheata(String marca, String material, String culoare, double pret, int marime,
+    public Gheata(int stoc, String material, String culoare, double pret, int marime,
                   String tipTalpa, String tipGheata, String captuseala, double grosimeTalpa,
                   boolean impermeabila){
-        super(marca,material,culoare,pret,marime);
+        super(stoc,material,culoare,pret,marime);
         this.tipTalpa=tipTalpa;
         this.tipGheata=tipGheata;
         this.captuseala=captuseala;

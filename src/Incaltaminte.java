@@ -1,20 +1,21 @@
 public class Incaltaminte extends abstracta {
-    protected String marca;
+    protected int stoc;
     protected String material;
     protected String culoare;
     protected double pret;
     protected int marime;
 
+
     public Incaltaminte(){
-        this.marca="Necunoscuta";
+        this.stoc=0;
         this.material="Necunoscut";
         this.culoare="Negru";
         this.pret=0;
         this.marime=0;
     }
 
-    public Incaltaminte(String marca, String material, String culoare, double pret, int marime){
-        this.marca=marca;
+    public Incaltaminte(int stoc, String material, String culoare, double pret, int marime){
+        this.stoc=stoc;
         this.material=material;
         this.culoare=culoare;
         this.pret=pret;
@@ -22,15 +23,15 @@ public class Incaltaminte extends abstracta {
     }
 
     public Incaltaminte(Incaltaminte i1){
-        this.marca=i1.marca;
+        this.stoc=i1.stoc;
         this.material=i1.material;
         this.culoare=i1.culoare;
         this.pret=i1.pret;
         this.marime=i1.marime;
     }
 
-    public String getMarca(){
-        return marca;
+    public int getStoc(){
+        return stoc;
     }
 
     public String getMaterial(){
@@ -50,7 +51,7 @@ public class Incaltaminte extends abstracta {
     }
     @Override
     public String toString(){
-        return ("Marca: "+marca+"\nMaterialul: "+material+"\nCuloare: "+culoare+"\nPretul: "+pret+"\nMarimea: "+marime);
+        return ("Stoc: "+stoc+"\nMaterialul: "+material+"\nCuloare: "+culoare+"\nPretul: "+pret+"\nMarimea: "+marime);
     }
 
     @Override
