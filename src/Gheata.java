@@ -14,10 +14,10 @@ public class Gheata extends Incaltaminte{
         this.impermeabila=false;
     }
 
-    public Gheata(int stoc, String material, String culoare, double pret, int marime,
+    public Gheata(int stoc, String marca, String material, String culoare, double pret, int marime,
                   String tipTalpa, String tipGheata, String captuseala, double grosimeTalpa,
                   boolean impermeabila){
-        super(stoc,material,culoare,pret,marime);
+        super(stoc,marca,material,culoare,pret,marime);
         this.tipTalpa=tipTalpa;
         this.tipGheata=tipGheata;
         this.captuseala=captuseala;
@@ -27,12 +27,11 @@ public class Gheata extends Incaltaminte{
 
     public Gheata(Gheata g1){
         super(g1);
-        if(this!=g1){
-            this.tipTalpa=g1.tipTalpa;
-            this.tipGheata=g1.tipGheata;
-            this.captuseala=g1.captuseala;
-            this.grosimeTalpa=g1.grosimeTalpa;
-            this.impermeabila=g1.impermeabila;}
+        this.tipTalpa=g1.tipTalpa;
+        this.tipGheata=g1.tipGheata;
+        this.captuseala=g1.captuseala;
+        this.grosimeTalpa=g1.grosimeTalpa;
+        this.impermeabila=g1.impermeabila;
     }
 
     @Override
@@ -79,6 +78,27 @@ public class Gheata extends Incaltaminte{
 
     public boolean getImpermeabila(){
         return impermeabila;
+    }
+
+    @Override
+    public void EsteDisponibil(){
+        if(getStoc()==0){
+            System.out.println("Stoc epuizat");
+        } else if(getStoc()<=5){
+            System.out.println("Stoc redus");
+        } else {
+            System.out.println("Produsul este in stoc");
+        }
+    }
+
+    @Override
+    public void afisare(){
+        if(getStoc()!=0){
+            System.out.println("\nProdus: Gheata");
+            System.out.println(this.toString());
+            System.out.println("\nDisponibilitate:");
+            EsteDisponibil();
+        }
     }
 
 

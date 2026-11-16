@@ -15,10 +15,10 @@ public class Pantof extends Incaltaminte{
 
     }
 
-    public Pantof(int stoc, String material, String culoare, double pret, int marime,
+    public Pantof(int stoc, String marca, String material, String culoare, double pret, int marime,
                   String tipToc, String formaVarf,String destinatie, double inaltimeToc,
                   int numarAccesorii){
-        super(stoc,material,culoare,pret,marime);
+        super(stoc,marca,material,culoare,pret,marime);
         this.tipToc=tipToc;
         this.formaVarf=formaVarf;
         this.destinatie=destinatie;
@@ -28,12 +28,11 @@ public class Pantof extends Incaltaminte{
 
     public Pantof(Pantof p1){
         super(p1);
-        if(this!=p1){
         this.tipToc=p1.tipToc;
         this.formaVarf=p1.formaVarf;
         this.destinatie=p1.destinatie;
         this.inaltimeToc=p1.inaltimeToc;
-        this.numarAccesorii=p1.numarAccesorii;}
+        this.numarAccesorii=p1.numarAccesorii;
     }
 
     @Override
@@ -80,6 +79,27 @@ public class Pantof extends Incaltaminte{
 
     public int getNumarAccesorii(){
         return numarAccesorii;
+    }
+
+    @Override
+    public void EsteDisponibil(){
+        if(getStoc()==0){
+            System.out.println("Stoc epuizat");
+        } else if(getStoc()<=5){
+            System.out.println("Stoc redus");
+        } else {
+            System.out.println("Produsul este in stoc");
+        }
+    }
+
+    @Override
+    public void afisare(){
+        if(getStoc()!=0){
+            System.out.println("\nProdus: Pantof");
+            System.out.println(this.toString());
+            System.out.println("\nDisponibilitate:");
+            EsteDisponibil();
+        }
     }
 
 
