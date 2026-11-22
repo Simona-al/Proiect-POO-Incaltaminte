@@ -64,7 +64,7 @@ public class Incaltaminte extends Abstracta {
     }
 
     @Override
-    public void EsteDisponibil(){
+    public void esteDisponibil(){
 
     }
 
