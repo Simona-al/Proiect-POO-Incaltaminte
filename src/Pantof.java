@@ -95,21 +95,16 @@ public class Pantof extends Incaltaminte{
     @Override
     public void afisare(){
         if(getStoc()!=0){
-            System.out.println("\nDisponibilitatea produsului:");
-            esteDisponibil();
             System.out.println("\nProdus: Pantof");
             System.out.println("Detaliile produsului:");
             System.out.println(this.toString());
 
         } else{
+            System.out.println("\nProdus: Pantof");
             System.out.println("\nDisponibilitatea produsului:");
             esteDisponibil();
-            System.out.println("\nProdus: Pantof");
-            System.out.println("Detaliile produsului:");
-            System.out.println(this.toString());
 
         }
     }
-
 
 }

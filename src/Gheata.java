@@ -94,16 +94,12 @@ public class Gheata extends Incaltaminte{
     @Override
     public void afisare(){
         if(getStoc()!=0){
-            System.out.println("\nDisponibilitate:");
-            this.esteDisponibil();
             System.out.println("\nProdus: Gheata");
             System.out.println(this.toString());
         } else{
+            System.out.println("\nProdus: Gheata");
             System.out.println("\nDisponibilitate:");
             this.esteDisponibil();
-            System.out.println("\nDetaliile produsului:");
-            System.out.println("\nProdus: Gheata");
-            System.out.println(this.toString());
         }
     }
 
