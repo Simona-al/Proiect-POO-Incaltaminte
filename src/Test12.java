@@ -3,7 +3,7 @@ public class Test12 {
     public static void main(String[] args){
 
         //Testare constructori
-        /*Incaltaminte i1=new Incaltaminte();
+        Incaltaminte i1=new Incaltaminte();
         Incaltaminte i2=new Incaltaminte(70,"Nike","Piele","Alb",650,37);
         Incaltaminte i3=new Incaltaminte(i2);
 
@@ -29,15 +29,22 @@ public class Test12 {
         System.out.println("\nDate membre gheata g2: "+"\n"+g2);
         System.out.println("\nDate membre gheata g3: "+"\n"+g3);
 
-        System.out.println("METODA ABSTRACTA AFISARE");
+        //Testare metode override
+        System.out.println("\nMETODE ABSTRACTE AFISARE");
 
         p1.afisare();
+        p1.esteDisponibil();
         p2.afisare();
+        p2.esteDisponibil();
         p3.afisare();
+        p3.esteDisponibil();
 
         g1.afisare();
+        g1.esteDisponibil();
         g2.afisare();
-        g3.afisare();*/
+        g2.esteDisponibil();
+        g3.afisare();
+        g3.esteDisponibil();
 
         //Testare vectori
         Object[] pantofi=new Object[10];
@@ -67,7 +74,7 @@ public class Test12 {
         ghete[9] = new Gheata(12, "Reserved", "Piele naturala", "Visiniu", 460, 38, "Sintetica", "Casual", "Cu blana", 2.7, false);
 
         //Afisare vectori
-        for(int i=0;i<ghete.length;i++){
+        for(int i=0;i<pantofi.length;i++){
             ((Pantof) pantofi[i]).afisare();
         }
 
@@ -75,27 +82,22 @@ public class Test12 {
             ((Gheata) ghete[j]).afisare();
         }
 
-        //Metode-utilizator
-        Scanner sc = new Scanner(System.in);
-
+        //Citire de la tastatura
+        Scanner citire = new Scanner(System.in);
         System.out.println("\nIntrodu pretul maxim pentru pantof:");
-        double pretMaxim = sc.nextDouble();
-
-        sc.nextLine(); // consumă Enter-ul rămas
-
+        double pretMaxim = citire.nextDouble();
+        citire.nextLine(); // consuma Enter-ul ramas
         System.out.println("Introdu marca pantofului:");
-        String marca = sc.nextLine();
+        String marca = citire.nextLine();
 
         filtrarePantofi(pantofi, pretMaxim, marca);
 
         System.out.println("\nIntrodu tipul ghetei:");
-        String tip= sc.nextLine();
-
+        String tip= citire.nextLine();
         System.out.println("Introdu marimea ghetei:");
-        int marime = sc.nextInt();
-
+        int marime = citire.nextInt();
         System.out.println("Gheata este impermeabila? (true/false)");
-        boolean impermeabila = sc.nextBoolean();
+        boolean impermeabila = citire.nextBoolean();
 
         filtrareGhete(ghete, tip, marime, impermeabila);
 
