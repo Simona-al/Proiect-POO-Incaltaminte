@@ -1,14 +1,77 @@
 import java.util.Scanner;
-public class testari14 {
+public class Testari14 {
 
     public static void main(String[] args) {
+
+        System.out.println("===== Incaltaminte =====");
+
+        Incaltaminte i1 = new Incaltaminte();
+        System.out.println("\n--- Constructor fara parametrii ---");
+        System.out.println(i1);
+
+
+        Incaltaminte i2 = new Incaltaminte(10, "NIKE", "PIELE", "ALB", 400.0, 42);
+        System.out.println("\n--- Constructor cu parametri ---");
+        System.out.println(i2);
+
+        Incaltaminte i3 = new Incaltaminte(i2);
+        System.out.println("\n--- constructor de copiere ---");
+        System.out.println(i3);
+
+
+        // getteri
+        System.out.println("\n--- Getteri (i2) ---");
+        System.out.println("Stoc: " + i2.getStoc());
+        System.out.println("Marca: " + i2.getMarca());
+        System.out.println("Material: " + i2.getMaterial());
+        System.out.println("Culoare: " + i2.getCuloare());
+        System.out.println("Pret: " + i2.getPret());
+        System.out.println("Marime: " + i2.getMarime());
+
+
+        System.out.println("\n--- Getteri copie (i3) ---");
+        System.out.println("Stoc: " + i3.getStoc());
+        System.out.println("Marca: " + i3.getMarca());
+        System.out.println("Material: " + i3.getMaterial());
+        System.out.println("Culoare: " + i3.getCuloare());
+        System.out.println("Pret: " + i3.getPret());
+        System.out.println("Marime: " + i3.getMarime());
+
+        //setteri
+        System.out.println("\n--- setteri (i3) ---");
+        i3.setMarca("ADIDAS");
+        System.out.println("Marca: " + i3.getMarca());
+        i3.setMaterial("TEXTIL");
+        System.out.println("Material: " + i3.getMaterial());
+        i3.setCuloare("NEGRU");
+        System.out.println("Culoare: " + i3.getCuloare());
+        i3.setMarime(41);
+        System.out.println("Marime: " + i3.getMarime());
+
+        // setStoc si setPret cu exceptie
+        try {
+            i3.setStoc(-5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("ATENTIE: " + e.getMessage());
+        }
+
+        try {
+            i3.setPret(-100.0);
+        } catch (IllegalArgumentException e) {
+            System.out.println("ATENTIE: " + e.getMessage());
+        }
+
+        //toString
+        System.out.println("--- toString ---");
+        System.out.println(i1.toString()+ i2.toString()+i3.toString());
+
 
         // GheteDrumetie
         System.out.println("===== GheteDrumetie =====");
 
         // constructor implicit
         GheteDrumetie g1 = new GheteDrumetie();
-        System.out.println("\n--- Constructor implicit ---");
+        System.out.println("\n--- Constructor fara argumente ---");
         System.out.println(g1);
 
         // constructor cu parametri
@@ -19,7 +82,7 @@ public class testari14 {
 
         //  constructor copiere
         GheteDrumetie g3 = new GheteDrumetie(g2);
-        System.out.println("\n--- Copy constructor ---");
+        System.out.println("\n--- constructor de copiere ---");
         System.out.println(g3);
 
         // setteri
@@ -47,19 +110,23 @@ public class testari14 {
 
         // esteDisponibil
         System.out.println("\n--- esteDisponibil ---");
-        g2.esteDisponibil();                 // stoc > 0, are perechi in magazin
+        g2.esteDisponibil();
         g2.setNumarPerechiInMagazin(0);
-        g2.esteDisponibil();                 // stoc > 0, doar online
+        g2.esteDisponibil();
 
         GheteDrumetie g4 = new GheteDrumetie(0, "Columbia", "Piele", "Maro", 500.0, 40,
                 "Omni-Grip", "vara", 0, true, 1.0);
-        g4.esteDisponibil();                 // stoc epuizat
+        g4.esteDisponibil();
 
         // afisare
         System.out.println("\n--- afisare ---");
-        g2.afisare();                        // cu stoc
+        g2.afisare();
         System.out.println();
-        g4.afisare();                        // fara stoc
+        g4.afisare();
+
+        //toString
+        System.out.println("--- toString ---");
+        System.out.println(g1.toString()+ g2.toString()+g3.toString()+g4.toString());
 
 
         // ================= PantofCasual =================
@@ -118,6 +185,9 @@ public class testari14 {
         p2.afisare();
         System.out.println();
         p4.afisare();
+        //toString
+        System.out.println("--- toString ---");
+        System.out.println(p1.toString()+ p2.toString()+p3.toString()+p4.toString());
 
         //Metodele de filtrare a vectorilor de tip GheteDrumetie si PantofCasual-saptamana 3
         //GHETE DRUMETIE
