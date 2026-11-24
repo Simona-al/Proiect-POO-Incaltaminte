@@ -82,7 +82,7 @@ public class Pantof extends Incaltaminte{
     }
 
     @Override
-    public void EsteDisponibil(){
+    public void esteDisponibil(){
         if(getStoc()==0){
             System.out.println("Stoc epuizat");
         } else if(getStoc()<=5){
@@ -95,21 +95,16 @@ public class Pantof extends Incaltaminte{
     @Override
     public void afisare(){
         if(getStoc()!=0){
-            System.out.println("\nDisponibilitate:");
-            EsteDisponibil();
             System.out.println("\nProdus: Pantof");
             System.out.println("Detaliile produsului:");
             System.out.println(this.toString());
 
         } else{
-            System.out.println("\nDisponibilitate:");
-            EsteDisponibil();
             System.out.println("\nProdus: Pantof");
-            System.out.println("Detaliile produsului:");
-            System.out.println(this.toString());
+            System.out.println("\nDisponibilitatea produsului:");
+            esteDisponibil();
 
         }
     }
-
 
 }
