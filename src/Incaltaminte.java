@@ -37,30 +37,45 @@ public class Incaltaminte extends Abstracta {
     public int getStoc(){
         return stoc;
     }
+    public void setStoc(int stoc) {
+
+            if (stoc < 0) throw new IllegalArgumentException("Stocul nu poate fi negativ");
+            this.stoc = stoc;
+        }
+
+
 
     public String getMaterial(){
         return material;
     }
+    public void setMaterial(String material) { this.material = material; }
+
 
     public String getCuloare(){
         return culoare;
     }
+    public void setCuloare(String culoare) { this.culoare = culoare; }
 
     public double getPret(){
         return pret;
     }
-
+    public void setPret(double pret) {
+            if (pret < 0) throw new IllegalArgumentException("Pretul nu poate fi negativ");
+            this.pret = pret;
+        }
     public int getMarime(){
         return marime;
     }
+    public void setMarime(int marime) { this.marime = marime; }
 
     public String getMarca() {
         return marca;
     }
+    public void setMarca(String marca) { this.marca = marca; }
 
     @Override
     public String toString(){
-        return ("Stoc: "+stoc+"\nMarca: "+marca+"\nMaterialul: "+material+"\nCuloare: "+culoare+"\nPretul: "+pret+"\nMarimea: "+marime);
+        return ("\nStoc: "+stoc+"\nMarca: "+marca+"\nMaterialul: "+material+"\nCuloare: "+culoare+"\nPretul: "+pret+"\nMarimea: "+marime);
     }
 
     @Override
